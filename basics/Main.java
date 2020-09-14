@@ -61,6 +61,7 @@ public class Main {
   private static void clock (){
 
     String test = "";
+    float count = 0;
 
     while (true){
       LocalDateTime now = LocalDateTime.now();
@@ -69,9 +70,12 @@ public class Main {
       String formatDateTime = now.format(format);
 
       if (!test.equals(formatDateTime)){
-        System.out.println(formatDateTime);
+        String out = String.format("%.2fM", count/1_000_000);
+        System.out.println(formatDateTime + " " + out + " Mhz");
+        count = 0;
       }
       
+      count++;
       test = formatDateTime;
       
     }
