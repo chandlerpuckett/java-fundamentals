@@ -1,5 +1,8 @@
 package basics;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Main {
 
   public static void main(final String[] args){
@@ -17,6 +20,8 @@ public class Main {
 
     flipNHeads(3);
     flipNHeads(5);
+
+    clock();
 
   }
 
@@ -51,6 +56,26 @@ public class Main {
     }
     
     System.out.println("It took " + count + " flips to flip " + n + " heads in a row");
+  }
+  
+  private static void clock (){
+
+    String test = "";
+
+    while (true){
+      LocalDateTime now = LocalDateTime.now();
+      
+      DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+      String formatDateTime = now.format(format);
+
+      if (!test.equals(formatDateTime)){
+        System.out.println(formatDateTime);
+      }
+      
+      test = formatDateTime;
+      
+    }
+
   }
 
 }
