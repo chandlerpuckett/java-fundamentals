@@ -1,5 +1,7 @@
 package basiclibrary;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,18 +39,29 @@ public class Dice {
         return test;
     }
 
-    public int calculateAverages (int[] arr){
+    public double calculateAverages (int[] arr){
 
-//        this method with calculate the average
-//        of an array & return the number
+//        this method will calculate &
+//        return the average of an array
+        DecimalFormat df = new DecimalFormat("#.##");
+        double sum = 0;
+
+        for (int val : arr){
+            sum += val;
+        }
+
+        double avg = sum / arr.length;
+        double formatAns = Double.parseDouble(df.format(avg));
+        System.out.println("the average is: " + formatAns);
+        return formatAns;
 
     }
 
-    public int returnLowestAverage (int [][] arr ){
-
-//        this method will calculate the average of
-//        each array & return the lowest average number
-
-    }
+//    public int returnLowestAverage (int [][] arr ){
+//
+////        this method will calculate the average of
+////        each array & return the lowest average number
+//
+//    }
 
 }
