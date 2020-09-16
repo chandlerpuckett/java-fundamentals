@@ -63,10 +63,22 @@ public class Dice {
         DecimalFormat df = new DecimalFormat("#.##");
 
         double sum = 0;
-        double lowest = 57;
+        double lowest = 1000;
 
+        for (int[] outer : arr){
 
-        return lowest;
+            for (int val : outer){
+                sum += val;
+            }
+
+            double avg = sum / outer.length;
+
+            if (avg < lowest){
+                lowest = avg;
+            }
+            sum = 0;
+        }
+        return Double.parseDouble(df.format(lowest));
     }
 
 }
