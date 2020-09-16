@@ -24,9 +24,12 @@ public class LibraryTest {
         };
 
         assertEquals(
-                "the high temp is High: 71",
-                test.analyzeWeatherData(weeklyMonthTemperatures),
-                "High: 71"
-                    );
+                "High: 72" + "\n" + "Low: 51" + "\n" +
+                        "Never saw temp: 63" + "\n" +
+                        "Never saw temp: 67" + "\n" +
+                        "Never saw temp: 68" + "\n" +
+                        "Never saw temp: 69" + "\n" ,
+                test.analyzeWeatherData(weeklyMonthTemperatures)
+        );
     }
 }

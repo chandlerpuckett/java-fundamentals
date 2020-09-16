@@ -37,6 +37,7 @@ public class Library {
 //        print out string of Temps not seen during month (between min & max)
 
         HashSet<Integer> tempSet = new HashSet<>();
+        HashSet<String> answer = new HashSet<>();
 
         for (int[] outer : arr){
             for (int vals : outer){
@@ -47,16 +48,17 @@ public class Library {
         int maxTemp = Collections.max(tempSet);
         int minTemp = Collections.min(tempSet);
 
-        System.out.println("High: " + maxTemp);
-        System.out.println("Low: " + minTemp);
+        String ans = "High: " + maxTemp + "\n" +
+                     "Low: "  + minTemp + "\n" ;
 
         for (int i = minTemp; i < maxTemp; i++){
-            if (!tempSet.contains(i)){
-                System.out.println("Never saw temp: " + i);
+            if ( !tempSet.contains(i) ){
+                ans += "Never saw temp: " + i + "\n" ;
             }
         }
 
-        return "High: 71";
+        System.out.println(ans);
+        return ans;
     }
 
     public String tally (List<String> votes){
