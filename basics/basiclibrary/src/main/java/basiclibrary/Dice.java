@@ -7,7 +7,7 @@ public class Dice {
 
     private int dice;
 
-    private int[] roll (int n) {
+    public int[] roll (int n) {
 //      while loop to roll
         int count = 0;
         int[] rollValues = new int[n];
@@ -20,7 +20,7 @@ public class Dice {
         return rollValues;
     }
 
-    private boolean containsDuplicates (int[] arr){
+    public boolean containsDuplicates (int[] arr){
 
         boolean test = false;
 
