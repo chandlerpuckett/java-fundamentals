@@ -37,4 +37,18 @@ public class Dice {
         return test;
     }
 
+    public int calculateAverages (int[] arr){
+
+//        this method with calculate the average
+//        of an array & return the number
+
+    }
+
+    public int returnLowestAverage (int [][] arr ){
+
+//        this method will calculate the average of
+//        each array & return the lowest average number
+
+    }
+
 }
