@@ -43,6 +43,7 @@ public class Dice {
 
 //        this method will calculate &
 //        return the average of an array
+
         DecimalFormat df = new DecimalFormat("#.##");
         double sum = 0;
 
@@ -51,17 +52,21 @@ public class Dice {
         }
 
         double avg = sum / arr.length;
-        double formatAns = Double.parseDouble(df.format(avg));
-        System.out.println("the average is: " + formatAns);
-        return formatAns;
-
+        return Double.parseDouble(df.format(avg));
     }
 
-//    public int returnLowestAverage (int [][] arr ){
-//
-////        this method will calculate the average of
-////        each array & return the lowest average number
-//
-//    }
+    public double returnLowestAverage (int[][] arr ){
+
+//        this method will calculate the average of
+//        each array & return the lowest average number
+
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        double sum = 0;
+        double lowest = 57;
+
+
+        return lowest;
+    }
 
 }
