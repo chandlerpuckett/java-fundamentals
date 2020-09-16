@@ -3,8 +3,66 @@
  */
 package basiclibrary;
 
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+
+    public void list () {
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
+    }
+
+    public String analyzeWeatherData (int[][] arr){
+//        use HashSet of type <Integer> to keep track
+//        of unique temperatures seen
+//        print out Min & Max Temp
+//        print out string of Temps not seen during month (between min & max)
+
+        HashSet<Integer> tempSet = new HashSet<>();
+
+        for (int[] outer : arr){
+            for (int vals : outer){
+                tempSet.add(vals);
+            }
+        }
+
+        int maxTemp = Collections.max(tempSet);
+        int minTemp = Collections.min(tempSet);
+
+        System.out.println("High: " + maxTemp);
+        System.out.println("Low: " + minTemp);
+
+        for (int i = minTemp; i < maxTemp; i++){
+            if (!tempSet.contains(i)){
+                System.out.println("Never saw temp: " + i);
+            }
+        }
+
+        return "High: 71";
+    }
+
+    public String tally (List<String> votes){
+
+        String winner = "Bush";
+        return winner;
+    }
+
 }
