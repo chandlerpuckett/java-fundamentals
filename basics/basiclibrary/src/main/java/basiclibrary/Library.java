@@ -14,22 +14,6 @@ public class Library {
         return true;
     }
 
-    public void list () {
-        List<String> votes = new ArrayList<>();
-        votes.add("Bush");
-        votes.add("Bush");
-        votes.add("Bush");
-        votes.add("Shrub");
-        votes.add("Hedge");
-        votes.add("Shrub");
-        votes.add("Bush");
-        votes.add("Hedge");
-        votes.add("Bush");
-
-        String winner = tally(votes);
-        System.out.println(winner + " received the most votes!");
-    }
-
     public String analyzeWeatherData (int[][] arr){
 //        use HashSet of type <Integer> to keep track
 //        of unique temperatures seen
@@ -51,20 +35,31 @@ public class Library {
         String ans = "High: " + maxTemp + "\n" +
                      "Low: "  + minTemp + "\n" ;
 
-        for (int i = minTemp; i < maxTemp; i++){
-            if ( !tempSet.contains(i) ){
-                ans += "Never saw temp: " + i + "\n" ;
+        for (int i = minTemp; i < maxTemp; i++) {
+            if (!tempSet.contains(i)) {
+                ans += "Never saw temp: " + i + "\n";
             }
         }
 
-        System.out.println(ans);
         return ans;
     }
 
-    public String tally (List<String> votes){
+    public static String tally (List<String> votes){
 
-        String winner = "Bush";
-        return winner;
+        Set<String> uniqueVotes = new HashSet<>(votes);
+
+        int winNum = Integer.MIN_VALUE;
+        String winString = "";
+
+        for (String candidate : uniqueVotes) {
+
+            int votesNum = Collections.frequency(votes,candidate);
+
+            if ( votesNum > winNum ){
+                winString = candidate;
+                winNum = votesNum;
+            }
+        }
+        return winString;
     }
-
 }
