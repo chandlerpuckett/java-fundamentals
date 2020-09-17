@@ -63,7 +63,7 @@ public class Dice {
         DecimalFormat df = new DecimalFormat("#.##");
 
         double sum = 0;
-        double lowest = 1000;
+        double lowest = Double.MAX_VALUE;
 
         for (int[] outer : arr){
 

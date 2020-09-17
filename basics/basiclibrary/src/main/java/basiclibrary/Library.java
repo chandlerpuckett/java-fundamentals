@@ -3,8 +3,63 @@
  */
 package basiclibrary;
 
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
+    }
+
+    public String analyzeWeatherData (int[][] arr){
+//        use HashSet of type <Integer> to keep track
+//        of unique temperatures seen
+//        print out Min & Max Temp
+//        print out string of Temps not seen during month (between min & max)
+
+        HashSet<Integer> tempSet = new HashSet<>();
+        HashSet<String> answer = new HashSet<>();
+
+        for (int[] outer : arr){
+            for (int vals : outer){
+                tempSet.add(vals);
+            }
+        }
+
+        int maxTemp = Collections.max(tempSet);
+        int minTemp = Collections.min(tempSet);
+
+        String ans = "High: " + maxTemp + "\n" +
+                     "Low: "  + minTemp + "\n" ;
+
+        for (int i = minTemp; i < maxTemp; i++) {
+            if (!tempSet.contains(i)) {
+                ans += "Never saw temp: " + i + "\n";
+            }
+        }
+
+        return ans;
+    }
+
+    public static String tally (List<String> votes){
+
+        Set<String> uniqueVotes = new HashSet<>(votes);
+
+        int winNum = Integer.MIN_VALUE;
+        String winString = "";
+
+        for (String candidate : uniqueVotes) {
+
+            int votesNum = Collections.frequency(votes,candidate);
+
+            if ( votesNum > winNum ){
+                winString = candidate;
+                winNum = votesNum;
+            }
+        }
+        return winString;
     }
 }
