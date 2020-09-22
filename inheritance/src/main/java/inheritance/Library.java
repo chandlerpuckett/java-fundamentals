@@ -11,8 +11,10 @@ public class Library {
     public static void main(String[] args) {
 
         Restaurant pizza = new Restaurant("pizzatime", "$$$", 4.5);
+        Review review = new Review("great pizza pie", "critic guy", 4);
 
         System.out.println(pizza);
+        System.out.println(review);
 
     }
 }
