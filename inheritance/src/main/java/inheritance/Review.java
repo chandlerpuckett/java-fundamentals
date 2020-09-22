@@ -6,6 +6,8 @@ public class Review {
     private String author;
     private double starRating;
 
+    public Restaurant specificRestaurant;
+
 //    inheritance vs interfaces
 //    inheritance ties together abstraction & implementation
 
@@ -23,6 +25,8 @@ public class Review {
 
     }
 
+
+//    specificRestaurant.getName(); .getStars() etc.
     @Override
     public String toString() {
         return "Review {" +

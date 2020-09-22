@@ -13,6 +13,19 @@ public class Library {
         Restaurant pizza = new Restaurant("pizzatime", "$$$", 4.5);
         Review review = new Review("great pizza pie", "critic guy", 4);
 
+        Restaurant chipotle = new Restaurant("chipotle", "$$", 5);
+        Review greatChipRev = new Review("great", "me", 4);
+        Review badChip = new Review("not good", "not me", 1);
+
+//        to link the review with the restaurant -->
+        greatChipRev.specificRestaurant = chipotle;
+        badChip.specificRestaurant = chipotle;
+
+//        add reviews to chipotle
+//        this makes the relationship a two way street
+        chipotle.feedback.add(greatChipRev);
+        chipotle.feedback.add(badChip);
+
         System.out.println(pizza);
         System.out.println(review);
 
