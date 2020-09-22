@@ -14,5 +14,5 @@ public class RestaurantTest {
                 "{name='pizzatime', cost='$$$', rating=4.5}", test.toString());
     }
 
-    
+
 }
