@@ -10,24 +10,49 @@ public class Library {
 
     public static void main(String[] args) {
 
+//  ----- Restaurants -----
         Restaurant pizza = new Restaurant("pizzatime", "$$$", 4.5);
-        Review review = new Review("great pizza pie", "critic guy", 4);
-
         Restaurant chipotle = new Restaurant("chipotle", "$$", 5);
-        Review greatChipRev = new Review("great", "me", 4);
-        Review badChip = new Review("not good", "not me", 1);
+
+//  ----- Shops -----
+        Shop cycle = new Shop("Cycle Shop",
+                "We sell bicycles",
+                4,
+                "$$");
+
+//  ----- Reviews -----
+        Review review = new Review("great pizza pie", "critic guy", 4, pizza);
+        Review greatChipRev = new Review("great", "me", 4, chipotle);
+        Review badChip = new Review("not good", "not me", 1, chipotle);
+
+        Review cycleShop = new Review("wheels", "carl", 4, cycle);
+
+
 
 //        to link the review with the restaurant -->
-        greatChipRev.specificRestaurant = chipotle;
-        badChip.specificRestaurant = chipotle;
+        greatChipRev.restaurant = chipotle;
+        badChip.restaurant = chipotle;
+        review.restaurant = pizza;
+
+//        link the review with the shop -->
+        cycleShop.shop = cycle;
+
+//        ===============================
 
 //        add reviews to chipotle
 //        this makes the relationship a two way street
         chipotle.feedback.add(greatChipRev);
         chipotle.feedback.add(badChip);
+        pizza.feedback.add(review);
 
-        System.out.println(pizza);
-        System.out.println(review);
+//        --- shop reviews ---
+        cycle.feedback.add(cycleShop);
 
+
+//  ----- output -----
+//        System.out.println(pizza);
+//        System.out.println(review);
+        System.out.println(chipotle.feedback);
+        System.out.println(cycle.feedback);
     }
 }
