@@ -1,10 +1,14 @@
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Restaurant {
 
     private String name;
     private String cost;
     private double rating;
+
+    public ArrayList<Review> feedback = new ArrayList<>();
 
 //  ----- constructor ----- //
     Restaurant (String name, String cost, double rating) {
