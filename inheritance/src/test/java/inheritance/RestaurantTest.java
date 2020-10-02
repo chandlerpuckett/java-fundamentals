@@ -13,7 +13,7 @@ public class RestaurantTest {
         assertEquals("Restaurant " +
                 "{name='pizzatime', " +
                 "cost='$$$', " +
-                "rating=5}", test.toString());
+                "rating=5.0}", test.toString());
     }
 
 
