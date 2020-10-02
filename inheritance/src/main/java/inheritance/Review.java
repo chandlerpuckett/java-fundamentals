@@ -4,51 +4,48 @@ public class Review {
 
     private String body;
     private String author;
-    private double starRating;
-
-    public Restaurant restaurant;
-    public Shop shop;
-
-
-//    inheritance vs interfaces
-//    inheritance ties together abstraction & implementation
-
-//    have the restaurant implement the review
-//    each restaurant handles how it implements individual review
-//    what is the purpose of the review?
-//    what info does the restaurant need?
+    private int rating;
 
     Review (String body,
             String author,
-            double starRating,
-            Restaurant restaurant) {
-//        Review is a restaurant -- as it stands
+            int starRating) {
 
         this.body = body;
         this.author = author;
-        this.starRating = starRating;
-        this.restaurant = restaurant;
-
+        this.rating = starRating;
     }
 
+//    ----- getters & setters -----
+    public String getBody() {
+        return body;
+    }
 
-//    specificRestaurant.getName(); .getStars() etc.
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+//    ----- to string -----
     @Override
     public String toString() {
-
-        String typeOf = "";
-
-        if (restaurant.getName() == null){
-            typeOf = "shop='" + shop.getName() + '\'';
-        } else {
-            typeOf = "restaurant='" + restaurant.getName() + '\'';
-        }
-
-        return "Review {" +
-                typeOf +
-                ", body='" + body + '\'' +
+        return "Review {body='" + body + '\'' +
                 ", author='" + author + '\'' +
-                ", starRating=" + starRating +
+                ", starRating=" + rating +
                 '}';
     }
 }
