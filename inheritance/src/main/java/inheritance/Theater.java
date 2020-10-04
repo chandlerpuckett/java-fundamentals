@@ -19,7 +19,7 @@ public class Theater extends Business{
     }
 
     public void removeMovie (String movieToRemove){     // removes movie from list
-        if (currentlyShowing == null){return;}
+        if (currentlyShowing.size() == 0){return;}
         currentlyShowing.removeIf(movie -> movie.equals(movieToRemove));
     }
 
