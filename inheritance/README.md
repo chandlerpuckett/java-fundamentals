@@ -17,3 +17,18 @@ when adding a review
 **Tests**
 - constructors
 - `./gradlew test` in the terminal
+
+# Lab 7 - Inheritanc Pt. II
+
+## Summary
+Program now allows the creation of "Shops" & "Theaters". The ability
+to review shops, theaters and specific movies was added as well.
+
+## Operation
+- same as Lab 6 with additional features:
+- create a Shop
+- create a Theatre
+- add movies currently showing at a theater with `addMovie(String)`
+- remove movies from currently showing with `removeMovie(String)`
+- can review a specific movie by using the `MovieReview` class
+
