@@ -15,6 +15,28 @@ public class Library {
         Restaurant chipotle = new Restaurant("chipotle", "$$", 5);
 
 
+//  ----- Shops -----
+        Shop bicycles = new Shop("Gregg's Cycle","we sell bicycle parts","$$$");
+        Shop gamesStop = new Shop("Gamestop","video games and stuff", "$$");
+
+//  ----- Theater -----
+        Theater regal10 = new Theater("Regal 10","Regal 10 Cinemas", "$$");
+        Theater amcCinema = new Theater("AMC Cinemas","Boutique Indie Films at AMC", "$$$");
+
+        // add films to currently showing list
+        regal10.addMovie("Star Wars");
+        regal10.addMovie("Back To The Future");
+        regal10.addMovie("Borat");
+        regal10.addMovie("Fugitive");
+
+        amcCinema.addMovie("The Dead Don't Die");
+        amcCinema.addMovie("Mystery Train");
+        amcCinema.addMovie("Patterson");
+        amcCinema.addMovie("Coffee and Cigarettes");
+
+        // test removeMovie functionality
+        regal10.removeMovie("Back To The Future");
+
 //  ----- Reviews -----
         Review pizzaReview = new Review("this pizza was terrible","chandler",1);
         Review pizzaReview2 = new Review("worst slice ever","dave",2);
@@ -23,23 +45,82 @@ public class Library {
         Review chipRev2 = new Review("hot fire", "cindy", 5);
         Review chipRev3 = new Review("bugs in my burrito bowl", "howard",1);
 
+        Review bikeRev = new Review("great bicycle selection","mandy",5);
+        Review badBike = new Review("sold me flat tires","randy",2);
+
+        Review games1 = new Review("great selection", "betty",5);
+        Review games2 = new Review("kind and helpful", "mindy",4);
+        Review games3 = new Review("prices are amazing", "tad",5);
+
+        Review regalRev1 = new Review("popcorn tasty","carl",5);
+        Review regalRev2 = new Review("good candy stuff","chad",4);
+
+        Review amcRev1 = new Review("great art-house films","betsy",5);
+        Review amcRev2 = new Review("love Jim Jarmusch","Nadine",4);
+
+        Review movieReview = new MovieReview("great success!!","Todd",5,"Borat");
+
 
 //  ----- link the review to the restaurant -----
+        // pizza place
         pizza.addReview(pizzaReview);
         pizza.addReview(pizzaReview2);
 
+        // chipotle
         chipotle.addReview(chipRev);
         chipotle.addReview(chipRev2);
         chipotle.addReview(chipRev3);
 
-        System.out.println("PIZZA PLACE:");
+        // bike shop
+        bicycles.addReview(bikeRev);
+        bicycles.addReview(badBike);
+
+        // game stop
+        gamesStop.addReview(games1);
+        gamesStop.addReview(games2);
+        gamesStop.addReview(games3);
+
+        // regal 10
+        regal10.addReview(regalRev1);
+        regal10.addReview(regalRev2);
+        regal10.addReview(movieReview);
+
+        // amc theater
+        amcCinema.addReview(amcRev1);
+        amcCinema.addReview(amcRev2);
+
+//  ----- OUTPUT -----
+        System.out.println("Restaurants");
+        System.out.println("---------------");
+        System.out.println("Pizza Place:");
         System.out.println(pizza);
         System.out.println(pizza.reviewList);
         System.out.println();
 
-        System.out.println("CHIPOTLE:");
+        System.out.println("Chipotle:");
         System.out.println(chipotle);
         System.out.println(chipotle.reviewList);
+        System.out.println();
+
+        System.out.println("Shops ");
+        System.out.println("---------------");
+        System.out.println("Gregg's Cycles");
+        System.out.println(bicycles);
+        System.out.println(bicycles.reviewList);
+        System.out.println();
+
+        System.out.println("GameStop");
+        System.out.println(gamesStop);
+        System.out.println(gamesStop.reviewList);
+        System.out.println();
+
+        System.out.println("Theaters ");
+        System.out.println("---------------");
+        System.out.println("Regal 10:");
+        System.out.println(regal10);        // Back to The Future should be omitted from Currently Showing
+        System.out.println();
+        System.out.println("AMC Cinema:");
+        System.out.println(amcCinema);
 
     }
 }

@@ -6,6 +6,8 @@ public class Review {
     private String author;
     private int rating;
 
+    Review (){}
+
     Review (String body,
             String author,
             int starRating) {

@@ -1,38 +1,19 @@
 package inheritance;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends Business {
 
     private String name;
     private String cost;
     private double rating;
     private Review review;
 
-    ArrayList<Review> reviewList = new ArrayList<>();
-
 //  ----- constructor ----- //
     Restaurant (String name, String cost, int rating) {
         this.name = name;
         this.cost = cost;
         this.rating = rating;
-    }
-
-    public void addReview (Review review){
-        reviewList.add(review);
-
-        double avgRating;
-        int ratingTally = 0;
-
-        for(Review ratings : reviewList){
-            ratingTally += ratings.getRating();
-        }
-
-        avgRating = (double) ratingTally / reviewList.size();
-        this.rating = round(avgRating,1);
     }
 
 //  ----- getters & setters ----- //
@@ -60,10 +41,6 @@ public class Restaurant {
         this.rating = rating;
     }
 
-    private double round (double value, int precision){
-        int scale = (int) Math.pow(10, precision);
-        return (double) Math.round(value * scale) / scale;
-    }
 
 //  ----- toString ----- //
     @Override
