@@ -19,6 +19,21 @@ public class Library {
         Shop bicycles = new Shop("Gregg's Cycle","we sell bicycle parts","$$$");
         Shop gamesStop = new Shop("Gamestop","video games and stuff", "$$");
 
+//  ----- Theater -----
+        Theater regal10 = new Theater("Regal 10","Regal 10 Cinemas", "$$");
+        Theater amcCinema = new Theater("AMC Cinemas","Boutique Indie Films at AMC", "$$$");
+
+        // add films to currently showing list
+
+        regal10.addMovie("Star Wars");
+        regal10.addMovie("Back To The Future");
+        regal10.addMovie("Borat");
+        regal10.addMovie("Fugitive");
+
+        amcCinema.addMovie("The Dead Don't Die");
+        amcCinema.addMovie("Mystery Train");
+        amcCinema.addMovie("Patterson");
+        amcCinema.addMovie("Coffee and Cigarettes");
 
 //  ----- Reviews -----
         Review pizzaReview = new Review("this pizza was terrible","chandler",1);
@@ -35,34 +50,55 @@ public class Library {
         Review games2 = new Review("kind and helpful", "mindy",4);
         Review games3 = new Review("prices are amazing", "tad",5);
 
+        Review regalRev1 = new Review("popcorn tasty","carl",5);
+        Review regalRev2 = new Review("good candy stuff","chad",4);
+
+        Review amcRev1 = new Review("great art-house films","betsy",5);
+        Review amcRev2 = new Review("love Jim Jarmusch","Nadine",4);
+
+
 //  ----- link the review to the restaurant -----
+        // pizza place
         pizza.addReview(pizzaReview);
         pizza.addReview(pizzaReview2);
 
+        // chipotle
         chipotle.addReview(chipRev);
         chipotle.addReview(chipRev2);
         chipotle.addReview(chipRev3);
 
+        // bike shop
         bicycles.addReview(bikeRev);
         bicycles.addReview(badBike);
 
+        // game stop
         gamesStop.addReview(games1);
         gamesStop.addReview(games2);
         gamesStop.addReview(games3);
 
+        // regal 10
+        regal10.addReview(regalRev1);
+        regal10.addReview(regalRev2);
+
+        // amc theater
+        amcCinema.addReview(amcRev1);
+        amcCinema.addReview(amcRev2);
 
 //  ----- OUTPUT -----
-        System.out.println("PIZZA PLACE:");
+        System.out.println("Restaurants");
+        System.out.println("---------------");
+        System.out.println("Pizza Place:");
         System.out.println(pizza);
         System.out.println(pizza.reviewList);
         System.out.println();
 
-        System.out.println("CHIPOTLE:");
+        System.out.println("Chipotle:");
         System.out.println(chipotle);
         System.out.println(chipotle.reviewList);
         System.out.println();
 
-        System.out.println("SHOPS: ");
+        System.out.println("Shops ");
+        System.out.println("---------------");
         System.out.println("Gregg's Cycles");
         System.out.println(bicycles);
         System.out.println(bicycles.reviewList);
@@ -71,8 +107,15 @@ public class Library {
         System.out.println("GameStop");
         System.out.println(gamesStop);
         System.out.println(gamesStop.reviewList);
+        System.out.println();
 
-
+        System.out.println("Theaters ");
+        System.out.println("---------------");
+        System.out.println("Regal 10:");
+        System.out.println(regal10);
+        System.out.println();
+        System.out.println("AMC Cinema:");
+        System.out.println(amcCinema);
 
 
 

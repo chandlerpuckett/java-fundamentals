@@ -11,6 +11,7 @@ public class ShopTest {
         assertEquals("Shop " +
                 "{name='blockbuster', " +
                 "description='rentals', " +
-                "cost='$'}", testShop.toString());
+                "cost='$', " +
+                "rating=0.0}" , testShop.toString());
     }
 }
