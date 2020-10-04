@@ -1,8 +1,5 @@
 package inheritance;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Restaurant {
