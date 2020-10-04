@@ -24,7 +24,6 @@ public class Library {
         Theater amcCinema = new Theater("AMC Cinemas","Boutique Indie Films at AMC", "$$$");
 
         // add films to currently showing list
-
         regal10.addMovie("Star Wars");
         regal10.addMovie("Back To The Future");
         regal10.addMovie("Borat");
@@ -34,6 +33,9 @@ public class Library {
         amcCinema.addMovie("Mystery Train");
         amcCinema.addMovie("Patterson");
         amcCinema.addMovie("Coffee and Cigarettes");
+
+        // test removeMovie functionality
+        regal10.removeMovie("Back To The Future");
 
 //  ----- Reviews -----
         Review pizzaReview = new Review("this pizza was terrible","chandler",1);
@@ -55,6 +57,8 @@ public class Library {
 
         Review amcRev1 = new Review("great art-house films","betsy",5);
         Review amcRev2 = new Review("love Jim Jarmusch","Nadine",4);
+
+        Review movieReview = new MovieReview("great success!!","Todd",5,"Borat");
 
 
 //  ----- link the review to the restaurant -----
@@ -79,6 +83,7 @@ public class Library {
         // regal 10
         regal10.addReview(regalRev1);
         regal10.addReview(regalRev2);
+        regal10.addReview(movieReview);
 
         // amc theater
         amcCinema.addReview(amcRev1);
@@ -112,12 +117,10 @@ public class Library {
         System.out.println("Theaters ");
         System.out.println("---------------");
         System.out.println("Regal 10:");
-        System.out.println(regal10);
+        System.out.println(regal10);        // Back to The Future should be omitted from Currently Showing
         System.out.println();
         System.out.println("AMC Cinema:");
         System.out.println(amcCinema);
-
-
 
     }
 }
