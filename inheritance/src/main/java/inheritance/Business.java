@@ -1,11 +1,17 @@
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Business {
     String name;
     String description;
     String cost;
-    int rating;
+    double rating;
+    Review review;
 
+    ArrayList<Review> reviewList = new ArrayList<>();
+
+//    ----- constructors -----
     public Business(){}
 
     public Business(String name, String description, String cost) {
@@ -13,6 +19,30 @@ public class Business {
         this.description = description;
         this.cost = cost;
     }
+
+
+//    ----- functions -----
+    public void addReview (Review review){
+        reviewList.add(review);
+
+        double avgRating;
+        int ratingTally = 0;
+
+        for(Review ratings : reviewList){
+            ratingTally += ratings.getRating();
+        }
+
+        avgRating = (double) ratingTally / reviewList.size();
+        this.rating = round(avgRating,1);
+    }
+
+
+//    ----- helper functions -----
+    private double round (double value, int precision){
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
+    }
+
 
 //    ----- getters and setters -----
     public String getName() {

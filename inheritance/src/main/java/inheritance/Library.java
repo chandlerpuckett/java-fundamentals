@@ -15,6 +15,11 @@ public class Library {
         Restaurant chipotle = new Restaurant("chipotle", "$$", 5);
 
 
+//  ----- Shops -----
+        Shop bicycles = new Shop("Gregg's Cycle","we sell bicycle parts","$$$");
+        Shop gamesStop = new Shop("Gamestop","video games and stuff", "$$");
+
+
 //  ----- Reviews -----
         Review pizzaReview = new Review("this pizza was terrible","chandler",1);
         Review pizzaReview2 = new Review("worst slice ever","dave",2);
@@ -23,6 +28,12 @@ public class Library {
         Review chipRev2 = new Review("hot fire", "cindy", 5);
         Review chipRev3 = new Review("bugs in my burrito bowl", "howard",1);
 
+        Review bikeRev = new Review("great bicycle selection","mandy",5);
+        Review badBike = new Review("sold me flat tires","randy",2);
+
+        Review games1 = new Review("great selection", "betty",5);
+        Review games2 = new Review("kind and helpful", "mindy",4);
+        Review games3 = new Review("prices are amazing", "tad",5);
 
 //  ----- link the review to the restaurant -----
         pizza.addReview(pizzaReview);
@@ -32,6 +43,15 @@ public class Library {
         chipotle.addReview(chipRev2);
         chipotle.addReview(chipRev3);
 
+        bicycles.addReview(bikeRev);
+        bicycles.addReview(badBike);
+
+        gamesStop.addReview(games1);
+        gamesStop.addReview(games2);
+        gamesStop.addReview(games3);
+
+
+//  ----- OUTPUT -----
         System.out.println("PIZZA PLACE:");
         System.out.println(pizza);
         System.out.println(pizza.reviewList);
@@ -40,6 +60,21 @@ public class Library {
         System.out.println("CHIPOTLE:");
         System.out.println(chipotle);
         System.out.println(chipotle.reviewList);
+        System.out.println();
+
+        System.out.println("SHOPS: ");
+        System.out.println("Gregg's Cycles");
+        System.out.println(bicycles);
+        System.out.println(bicycles.reviewList);
+        System.out.println();
+
+        System.out.println("GameStop");
+        System.out.println(gamesStop);
+        System.out.println(gamesStop.reviewList);
+
+
+
+
 
     }
 }

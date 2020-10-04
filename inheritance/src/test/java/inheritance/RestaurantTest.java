@@ -9,7 +9,6 @@ public class RestaurantTest {
     @Test
     public void testRestaurantConstructor(){
         Restaurant test = new Restaurant("pizzatime", "$$$", 5);
-
         assertEquals("Restaurant " +
                 "{name='pizzatime', " +
                 "cost='$$$', " +
